@@ -63,7 +63,10 @@ public class ItemController {
             return ResponseEntity.notFound().build();
         }
     }
-
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Item> deleteItem(@PathVariable int id) {
+        Item existingItem = itemService.getItemById(id);
+    }
 
 
 }
